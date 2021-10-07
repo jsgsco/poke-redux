@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import { Helmet } from "react-helmet";
+import Info from "./components/Info";
+import List from "./components/List";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Helmet>
+        <title>Poke - Redux</title>
+      </Helmet>
+      <div className="bg-gray-900 text-white h-screen">
+        <div className="w-4/5 m-auto h-screen grid grid-cols-2 justify-items-center items-center">
+          <List />
+          <Info />
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
